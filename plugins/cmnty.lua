@@ -1,6 +1,10 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.prisma" },
+  { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   {
@@ -51,4 +55,5 @@ return {
   },
 
   { import = "astrocommunity.motion.leap-nvim" },
+  { import = "astrocommunity.motion.nvim-surround" },
 }
