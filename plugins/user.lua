@@ -10,12 +10,32 @@ return {
   },
 
   {
-    "jcdickinson/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    cmd = "Codeium",
-    config = function() require("codeium").setup {} end,
+    "rcarriga/nvim-notify",
+    config = function() require("notify.init").setup { disable = true } end,
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function()
+      require("lsp_signature").setup {
+        bind = true,
+        hint_enable = false,
+      }
+    end,
+  },
+  {
+    "pearofducks/ansible-vim",
+    config = function() require("ansible-vim").setup {} end,
+  },
+  {
+    "chr4/nginx.vim",
+  },
+  {
+    "yorik1984/zola.nvim",
+    dependencies = "Glench/Vim-Jinja2-Syntax",
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
   },
 }

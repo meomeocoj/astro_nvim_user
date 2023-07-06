@@ -34,15 +34,12 @@ return {
       "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>",
       desc = "Debug File",
     },
-    -- ["<leader>nl"] = { "<cmd>lua require('neotest').run.run_last()<cr>", desc = "Run Last" },
-    -- ["<leader>nL"] = { "<cmd>lua require('neotest').run.run_last({ strategy = 'dap' })<cr>", desc = "Debug Last" },
     ["<leader>nn"] = { "<cmd>lua require('neotest').run.run()<cr>", desc = "Run Nearest" },
     ["<leader>nN"] = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", desc = "Debug Nearest" },
-    -- ["<leader>no"] = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", desc = "Output" },
-    -- ["<leader>nS"] = { "<cmd>lua require('neotest').run.stop()<cr>", desc = "Stop" },
-    -- ["<leader>ns"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", desc = "Summary" },
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<C-h>"] = { "<cmd>TmuxNavigateLeft<CR>", desc = "window left" },
+    ["<C-l>"] = { "<cmd>TmuxNavigateRight<CR>", desc = "window right" },
+    ["<C-j>"] = { "<cmd>TmuxNavigateDown<CR>", desc = "window down" },
+    ["<C-k>"] = { "<cmd>TmuxNavigateUp<CR>", desc = "window up" },
   },
   t = {
     -- setting a mapping to false will disable it
