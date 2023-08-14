@@ -16,17 +16,13 @@ return {
       end,
       desc = "Pick to close",
     },
+    ["<leader>b"] = false,
+    ["<leader>bb"] = false,
+    ["<leader>bd"] = false,
+    ["<leader>b\\"] = false,
+    ["<leader>b|"] = false,
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
-    ["<leader>b"] = { name = "Buffers" },
-    ["<leader>bn"] = {
-      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-      desc = "Next buffer",
-    },
-    ["<leader>bb"] = {
-      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-      desc = "Previous buffer",
-    },
     ["<leader>n"] = { "", name = "Neotest", desc = "neotest" },
     ["<leader>na"] = { "<cmd>lua require('neotest').run.attach()<cr>", desc = "Attach" },
     ["<leader>nf"] = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", desc = "Run File" },

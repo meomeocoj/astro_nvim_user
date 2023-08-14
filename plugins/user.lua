@@ -1,7 +1,4 @@
 return {
-  -- You can also add new plugins here as well:
-  -- Add plugins, the lazy syntax
-  -- "andweeb/presence.nvim",
   {
     "crates.nvim",
     tag = "v0.3.0",
@@ -29,10 +26,6 @@ return {
   },
   {
     "chr4/nginx.vim",
-  },
-  {
-    "yorik1984/zola.nvim",
-    dependencies = "Glench/Vim-Jinja2-Syntax",
   },
   {
     "christoomey/vim-tmux-navigator",
