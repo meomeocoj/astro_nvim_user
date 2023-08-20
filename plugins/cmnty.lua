@@ -6,46 +6,8 @@ return {
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.terraform" },
-  { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
-  {
-    -- further customize the options set by the community
-    "catppuccin",
-    opts = {
-      flavour = "mocha",
-      background = {
-        -- :h background
-        light = "latte",
-        dark = "mocha",
-      },
-      styles = {
-        comments = { "italic" },
-        conditionals = { "italic" },
-        loops = {},
-        functions = {},
-        keywords = {},
-        strings = {},
-        variables = {},
-        numbers = {},
-        booleans = {},
-        properties = {},
-        types = {},
-        operators = {},
-      },
-      integrations = {
-        sandwich = false,
-        noice = true,
-        mini = true,
-        leap = true,
-        markdown = true,
-        neotest = true,
-        cmp = true,
-        overseer = true,
-        lsp_trouble = true,
-        ts_rainbow2 = true,
-      },
-    },
-  },
+  { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   {
     "m4xshen/smartcolumn.nvim",
@@ -54,9 +16,8 @@ return {
       disabled_filetypes = { "help" },
     },
   },
-
+  -- copilot cmp
   { import = "astrocommunity.completion.copilot-lua-cmp" },
-
   { import = "astrocommunity.indent.indent-blankline-nvim", enabled = true },
   { import = "astrocommunity.indent.mini-indentscope", enabled = true },
   { import = "astrocommunity.comment.mini-comment", enabled = true },
@@ -65,12 +26,8 @@ return {
   { import = "astrocommunity.terminal-integration.flatten-nvim", enabled = true },
   { import = "astrocommunity.syntax.hlargs-nvim", enabled = true },
   { import = "astrocommunity.lsp.inc-rename-nvim", enabled = true },
-  { import = "astrocommunity.motion.mini-move", enabled = true },
-  { import = "astrocommunity.motion.mini-surround", enabled = true },
-  { import = "astrocommunity.motion.mini-bracketed", enabled = true },
   { import = "astrocommunity.motion.leap-nvim", enabled = true },
   { import = "astrocommunity.test.neotest", enabled = true },
-  { import = "astrocommunity.scrolling.mini-animate" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim", enabled = true },
   { import = "astrocommunity.markdown-and-latex.vimtex", enabled = true },
 }
