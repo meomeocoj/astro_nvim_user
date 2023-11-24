@@ -1,4 +1,5 @@
 return {
+  colorscheme = "catppuccin",
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
@@ -16,8 +17,6 @@ return {
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
     },
   },
-  -- Set colorscheme to use
-  colorscheme = "catppuccin",
   -- Diagnostics configuation (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
@@ -49,10 +48,7 @@ return {
     servers = {
       -- "pyright"
     },
-    setup_handlers = {
-      -- add custom handler
-      rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end,
-    },
+    setup_handlers = {},
   },
   -- Configure require("lazy").setup() options
   lazy = {
@@ -84,10 +80,17 @@ return {
       return "yaml"
     end
 
+    local function json_ft(path, bufnr)
+      local path_regex = vim.regex "(tsconfig\\|.eslintrc.json\\|.prettierrc.json)"
+      if path_regex and path_regex:match_str(path) then return "jsonc" end
+      return "json"
+    end
+
     vim.filetype.add {
       extension = {
         yml = yaml_ft,
         yaml = yaml_ft,
+        json = json_ft,
       },
     }
   end,

@@ -29,39 +29,33 @@ local kind_icons = {
 
 return {
   "hrsh7th/nvim-cmp",
-  opts = {
-    history = true,
-    region_check_events = "InsertEnter",
-    delete_check_events = "TextChanged,InsertLeave",
-    performance = {
+  opts = function(_, opts)
+    opts.history = true
+    opts.region_check_events = "InsertEnter"
+    opts.delete_check_events = "TextChanged,InsertLeave"
+    opts.performance = {
       debounce = 300,
       throttle = 120,
       fetching_timeout = 100,
-    },
-    experimental = {
+    }
+    opts.experimental = {
       ghost_text = true,
-    },
-    formatting = {
+    }
+    opts.formatting = {
       fields = { "kind", "abbr", "menu" },
       format = function(entry, vim_item)
-        -- Kind icons
+        local _icon, hl_group = require("nvim-web-devicons").get_icon(entry:get_completion_item().label)
         vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+        vim_item.kind_hl_group = hl_group
         vim_item.menu = ({
           nvim_lsp = "[LSP]",
           luasnip = "[Snippet]",
           buffer = "[Buffer]",
           path = "[Path]",
-          codeium = "[Codeium]",
         })[entry.source.name]
         return vim_item
       end,
-    },
-    sources = {
-      { name = "nvim_lsp", priority = 1000 },
-      { name = "codeium",  priority = 750 },
-      { name = "luasnip",  priority = 700 },
-      { name = "path",     priority = 650 },
-      { name = "buffer",   priority = 400 },
-    },
-  },
+    }
+    opts.mapping["<C-j>"] = nil
+  end,
 }

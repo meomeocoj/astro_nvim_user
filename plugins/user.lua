@@ -5,20 +5,9 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function() require("crates").setup() end,
   },
-
   {
     "rcarriga/nvim-notify",
     config = function() require("notify.init").setup { disable = true } end,
-  },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function()
-      require("lsp_signature").setup {
-        bind = true,
-        hint_enable = false,
-      }
-    end,
   },
   {
     "pearofducks/ansible-vim",
@@ -26,9 +15,5 @@ return {
   },
   {
     "chr4/nginx.vim",
-  },
-  {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
   },
 }

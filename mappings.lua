@@ -32,10 +32,9 @@ return {
     },
     ["<leader>nn"] = { "<cmd>lua require('neotest').run.run()<cr>", desc = "Run Nearest" },
     ["<leader>nN"] = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", desc = "Debug Nearest" },
-    ["<C-h>"] = { "<cmd>TmuxNavigateLeft<CR>", desc = "window left" },
-    ["<C-l>"] = { "<cmd>TmuxNavigateRight<CR>", desc = "window right" },
-    ["<C-j>"] = { "<cmd>TmuxNavigateDown<CR>", desc = "window down" },
-    ["<C-k>"] = { "<cmd>TmuxNavigateUp<CR>", desc = "window up" },
+    ["<leader>no"] = { ":Neotest output<cr>", desc = "Output" },
+    ["<leader>np"] = { ":Neotest output-panel<cr>", desc = "Output-panel" },
+    ["<leader>ns"] = { ":lua require('neotest').summary<cr>", desc = "Summary" },
   },
   t = {
     -- setting a mapping to false will disable it
@@ -43,5 +42,6 @@ return {
   },
   i = {
     ["<C-s>"] = { "<esc>:w!<cr>a", desc = "Save File" }, -- change description but the same command
+    ["<C-j>"] = { "<esc>:lua require('copilot.suggestion').accept_line()" },
   },
 }
